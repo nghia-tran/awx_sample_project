@@ -13,5 +13,5 @@
     - name: Validate all Interfaces with Correct IP
       assert:
         that:
-          - ansible_net_interfaces[item.port].ipv4 == item.ip.split('/')[0]
+          - ansible_net_interfaces[item.port].ipv4[0]['address'] == item.ip.split('/')[0]
       loop: "{{ p2p_ip[inventory_hostname] }}"
