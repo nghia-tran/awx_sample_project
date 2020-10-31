@@ -1,7 +1,7 @@
 ---
 - name: Get IOS Facts 
   hosts: ios 
-  gather_facts: no
+  gather_facts: yes
   tasks: 
     - ios_facts:
       tags: collect_facts
